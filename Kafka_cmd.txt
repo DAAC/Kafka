@@ -1,0 +1,15 @@
+create topic
+kafka-topics --zookeeper 127.0.0.1:2181 --topic <nametopic> --create --partitions <number of partitions> --replication-factor <number of replication-factor>
+
+get topics
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+
+create a producer
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic <nametopic>
+
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic third_topic --producer acks=all
+
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic <nametopic>
+
+read msgs from beginning
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic <nametopic> --from-beginning
