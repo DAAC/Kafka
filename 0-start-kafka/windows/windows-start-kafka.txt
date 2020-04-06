@@ -1,0 +1,22 @@
+# Create Zookeeper and Kafka Directory
+F:\Kafka_training\0-start-kafka\windows\kafka_2.13-2.4.1\zookeeper_data
+F:\Kafka_training\0-start-kafka\windows\kafka_2.13-2.4.1\kafka_logs
+
+# Edit config\zookeeper.properties
+# change line to 
+# dataDir=F:\Kafka_training\kafka_2.13-2.4.1\zookeeper_data
+
+# start zookeeper (make sure nothing is running on port 2181)
+zookeeper-server-start.bat F:\Kafka_training\kafka_2.13-2.4.1\config\zookeeper.properties
+
+# Open a new command line (we leave zookeeper running in previous command line)
+
+# Edit config\server.properties
+# change line to 
+# log.dirs=F:\Kafka_training\kafka_2.13-2.4.1\kafka_logs
+
+# start Kafka
+kafka-server-start.bat F:\Kafka_training\kafka_2.13-2.4.1\config\server.properties
+
+# Kafka is running! 
+# Keep the two command line windows opened
